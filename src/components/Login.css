@@ -1,0 +1,149 @@
+:root {
+  /* Backgrounds */
+  --bg-page: #0f1115;
+  --bg-card: #151821;
+  --bg-input: #12141b;
+  --bg-hover-secondary: #181b24;
+
+  /* Borders */
+  --border-card: #1f2230;
+  --border-input: #2a2e40;
+  --border-secondary-btn: #313652;
+
+  /* Text */
+  --text-primary: #e6e8ee;
+  --text-secondary: #9aa0b3;
+  --text-strong: #f0f2f8;
+
+  /* Accent */
+  --accent-main: #6b7cff;
+  --accent-main-hover: #7f8dff;
+
+  /* States */
+  --state-success: #5fd08d;
+  --state-error: #f27d7d;
+}
+
+/* ===== ОБЩИЙ ФОН ===== */
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== КАРТОЧКА ===== */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 28px 32px;
+  box-shadow: 0 0 0 1px var(--border-card);
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.login-card h1 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  text-align: center;
+  color: var(--text-strong);
+}
+
+/* ===== ФОРМА ===== */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ===== ПОЛЯ ===== */
+.login-card label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.login-card input {
+  width: 94%;
+  padding: 10px 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: 10px;
+  color: var(--text-strong);
+  font-size: 14px;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: var(--accent-main);
+}
+
+/* ===== КНОПКИ ===== */
+.login-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.login-actions button {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-actions button:first-child {
+  background: var(--accent-main);
+  border: none;
+  color: var(--text-strong);
+}
+
+.login-actions button:last-child {
+  background: transparent;
+  border: 1px solid var(--border-secondary-btn);
+  color: var(--text-strong);
+}
+
+.login-actions button:first-child:hover {
+  background: var(--accent-main-hover);
+}
+
+.login-actions button:last-child:hover {
+  background: var(--bg-hover-secondary);
+}
+
+.login-actions button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ===== СООБЩЕНИЕ ===== */
+.login-message {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-message.success {
+  color: var(--state-success);
+}
+
+.login-message.error {
+  color: var(--state-error);
+}
