@@ -242,8 +242,18 @@ button:hover {
   opacity: 0.45;
 }
 
-.task-main strong {
+.task-title {
+  width: fit-content;
+}
+
+.task-title strong {
   font-size: 16px;
+}
+
+.task-title hr {
+  width: 100%;
+  border: none;
+  border-top: 2px solid var(--border-soft);
 }
 
 .task-meta {
@@ -269,6 +279,7 @@ button:hover {
 .task-expired {
   font-weight: bolder;
   color: var(--expired);
+  font-size: small;
 }
 
 .subject {
@@ -284,6 +295,12 @@ button:hover {
   gap: 6px;
 }
 
+.states {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
 .actions button {
   padding: 4px 10px;
   border-radius: 999px;
@@ -292,7 +309,7 @@ button:hover {
   color: white;
 }
 
-.delete-buttone:hover {
+.delete-button:hover {
   background-color: var(--expired);
   transition: 0.5s;
 }
