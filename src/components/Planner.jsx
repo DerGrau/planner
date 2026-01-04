@@ -112,6 +112,7 @@ export default function Planner() {
   }
 
   async function handleLogout() {
+    if (!window.confirm("Выйти из аккаунта?")) return;
     await supabase.auth.signOut();
   }
 
@@ -172,3 +173,4 @@ export default function Planner() {
     </div>
   );
 }
+
