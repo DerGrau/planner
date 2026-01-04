@@ -11,7 +11,10 @@ export default function TaskCard({ task, onToggleDone, onEdit, onDelete }) {
       />
 
       <div className="task-main">
-        <strong>{task.title}</strong>
+        <div className="task-title">
+          <strong>{task.title}</strong>
+          <hr />
+        </div>
 
         <div className="task-meta">
           <span>
@@ -27,21 +30,22 @@ export default function TaskCard({ task, onToggleDone, onEdit, onDelete }) {
               ? "средний"
               : "высокий"}
           </span>
-          <span>{isExpired === true ? "•" : ""}</span>
-          <span className="task-expired">
-            {isExpired === true ? "просрочено" : ""}
-          </span>
         </div>
 
         {task.notes && <div className="task-notes">{task.notes}</div>}
       </div>
 
       <div className="task-right">
-        <span className="subject">{task.subject}</span>
+        <div className="states">
+          <span className="task-expired">
+            {isExpired === true ? "просрочено" : ""}
+          </span>
+          <span className="subject">{task.subject}</span>
+        </div>
 
         <div className="actions">
           <button onClick={() => onEdit(task)}>Изменить</button>
-          <button className="delete-buttone" onClick={() => onDelete(task)}>
+          <button className="delete-button" onClick={() => onDelete(task)}>
             Удалить
           </button>
         </div>
